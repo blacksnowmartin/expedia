@@ -129,3 +129,4 @@ CREATE TABLE Flightbookingpassengers (
     FOREIGN KEY (bookingclassid) REFERENCES Flightbookingclasses(bookingclassid),
     FOREIGN KEY (documentid) REFERENCES Traveldocuments(documentid)
 );
+-- Blacksnow Martin Kitonga SCNI/01292/2021
