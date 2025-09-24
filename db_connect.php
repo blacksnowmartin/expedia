@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";  // Default XAMPP
 $password = "";      // Default XAMPP
-$dbname = "expedia_flights";
+$dbname = "expedia_flight_booking";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
