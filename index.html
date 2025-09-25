@@ -4,34 +4,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expedia Flights Mockup</title>
+    <title>Expedia Flights Booking</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        .search-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+        }
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .btn-search {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .btn-search:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        .airport-info {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
+        .feature-icon {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        .feature-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Expedia Flights Booking Mockup</h1>
-        <form action="search_results.php" method="POST" class="mt-4">
-            <div class="row">
-                <div class="col-md-3">
-                    <label for="departure_airport">Leaving from (Airport ID for mock: 1=JFK, 3=YYZ)</label>
-                    <input type="number" class="form-control" id="departure_airport" name="departure_airport" required>
-                </div>
-                <div class="col-md-3">
-                    <label for="destination_airport">Going to (Airport ID: 2=LAX, 1=JFK)</label>
-                    <input type="number" class="form-control" id="destination_airport" name="destination_airport" required>
-                </div>
-                <div class="col-md-3">
-                    <label for="departure_date">Departure Date</label>
-                    <input type="date" class="form-control" id="departure_date" name="departure_date" required min="2025-09-24">
-                </div>
-                <div class="col-md-3">
-                    <label for="num_passengers">Number of Passengers</label>
-                    <input type="number" class="form-control" id="num_passengers" name="num_passengers" min="1" required>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <i class="fas fa-plane me-3"></i>Find Your Perfect Flight
+                    </h1>
+                    <p class="lead">Search and compare flights from hundreds of airlines to get the best deals</p>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Search Flights</button>
-        </form>
+        </div>
     </div>
+
+    <!-- Search Form Card -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="search-card">
+                    <form action="search_results.php" method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-3">
+                                <label for="departure_airport" class="form-label fw-semibold">
+                                    <i class="fas fa-plane-departure me-2"></i>Leaving from
+                                </label>
+                                <input type="number" class="form-control form-control-lg" id="departure_airport" name="departure_airport" placeholder="Airport ID" required>
+                                <div class="airport-info">
+                                    <small>1=JFK, 3=YYZ</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <label for="destination_airport" class="form-label fw-semibold">
+                                    <i class="fas fa-plane-arrival me-2"></i>Going to
+                                </label>
+                                <input type="number" class="form-control form-control-lg" id="destination_airport" name="destination_airport" placeholder="Airport ID" required>
+                                <div class="airport-info">
+                                    <small>2=LAX, 1=JFK</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <label for="departure_date" class="form-label fw-semibold">
+                                    <i class="fas fa-calendar-alt me-2"></i>Departure Date
+                                </label>
+                                <input type="date" class="form-control form-control-lg" id="departure_date" name="departure_date" required min="2025-09-24">
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <label for="num_passengers" class="form-label fw-semibold">
+                                    <i class="fas fa-users me-2"></i>Passengers
+                                </label>
+                                <input type="number" class="form-control form-control-lg" id="num_passengers" name="num_passengers" min="1" placeholder="1" required>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-search btn-lg px-5">
+                                <i class="fas fa-search me-2"></i>Search Flights
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5 class="fw-bold">Secure Booking</h5>
+                    <p class="text-muted">Your personal information and payment details are protected with industry-standard security.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h5 class="fw-bold">Best Prices</h5>
+                    <p class="text-muted">We compare prices from hundreds of airlines to ensure you get the best deals available.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h5 class="fw-bold">24/7 Support</h5>
+                    <p class="text-muted">Our customer service team is available around the clock to assist with your travel needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h6 class="fw-bold">Expedia Flights</h6>
+                    <p class="mb-0">Your trusted partner for flight bookings worldwide.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">&copy; 2024 Expedia Flights. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
