@@ -9,7 +9,8 @@ INSERT INTO City (cityid, cityname, countryid) VALUES
 (1, 'Nairobi', 1),
 (2, 'Mombasa', 1),
 (3, 'Dar es Salaam', 2),
-(4, 'Entebbe', 3);
+(4, 'Kampala', 3),
+(5, 'Entebbe', 3);
 
 -- Insert sample data for Airports
 INSERT INTO Airports (airportid, airportcode, airportname, cityid) VALUES
